@@ -1,6 +1,6 @@
 # File: oop/library_system.py
 
-"""Library system demonstrating inheritance and composition."""
+"""Library system using inheritance and composition."""
 
 
 class Book:
@@ -10,13 +10,12 @@ class Book:
         self.author = author
 
     def get_info(self):
-        """Return book info string."""
         return f"Book: {self.title} by {self.author}"
 
 
 class EBook(Book):
     def __init__(self, title, author, file_size):
-        """Initialize EBook with title, author, and file size."""
+        """Initialize EBook with inherited and unique attributes."""
         super().__init__(title, author)
         self.file_size = file_size
 
@@ -26,7 +25,7 @@ class EBook(Book):
 
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
-        """Initialize PrintBook with title, author, and page count."""
+        """Initialize PrintBook with inherited and unique attributes."""
         super().__init__(title, author)
         self.page_count = page_count
 
@@ -36,14 +35,14 @@ class PrintBook(Book):
 
 class Library:
     def __init__(self):
-        """Initialize an empty library."""
+        """Initialize Library with an empty book list."""
         self.books = []
 
     def add_book(self, book):
-        """Add a book to the library."""
+        """Add a book to the library collection."""
         self.books.append(book)
 
     def list_books(self):
-        """Print information of all books in the library."""
+        """Print details of all books."""
         for book in self.books:
             print(book.get_info())
